@@ -1,0 +1,534 @@
+/* Reset căn bản */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Arial', sans-serif; background-color: #f9f9f9; }
+
+/* Cấu trúc Header Đứng Yên */
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Top Bar */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 10px 5%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    color: #2d5a27;
+    font-size: 20px;
+}
+
+/* Thanh tìm kiếm */
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    padding: 5px 15px;
+    width: 300px;
+    transition: 0.3s;
+}
+
+.search-box:focus-within {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 14px;
+    background: transparent;
+}
+
+.search-box i {
+    color: #666;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Khối liên hệ và giỏ hàng */
+.contact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-promo {
+    background: #c0392b;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.phone {
+    font-weight: bold;
+    color: white;
+    background: #c0392b;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+.cart-box {
+    position: relative;
+    text-decoration: none;
+    color: #c0392b;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.cart-box:hover {
+    color: #e74c3c;
+    transform: scale(1.1);
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #2d5a27; /* Màu xanh lá giống Navbar */
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #fff;
+}
+
+/* Navigation (Menu) */
+.navbar {
+    background: #2d5a27;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.navbar li a:hover {
+    background: #1e3d1a;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.hero-section img {
+    width: 100%;
+    max-width: 1400px;
+    height: auto;
+    display: block;
+}
+--- PHẦN TRƯNG BÀY SẢN PHẨM --- */
+.product-showcase {
+    padding: 30px 5%;
+    max-width: 1400px;
+    margin: 0 auto; /* Căn giữa nội dung */
+}
+.section-title {
+    text-align: center;
+    font-size: 28px;
+    color: #416335;
+    margin: 40px 0; /* Tăng khoảng cách trên và dưới */
+    font-weight: 700;   
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Khoảng cách giữa chữ và đường kẻ */
+}
+
+/* Thêm các đường kẻ giả (pseudo-elements) */
+.section-title::before,
+.section-title::after {
+    content: '';
+    flex-grow: 1; /* Cho phép đường kẻ lấp đầy không gian còn lại */
+    height: 1px; /* Chiều dày của đường kẻ */
+    background-color: #0a0a0a; /* Màu xám nhạt cho đường kẻ */
+    max-width: 400px; /* Giới hạn độ dài tối đa của đường kẻ */
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các mục tự động xuống dòng */
+    justify-content: space-between; /* Giãn cách đều giữa các sản phẩm */
+    gap: 20px; /* Khoảng cách giữa các hàng và cột */
+    margin-bottom: 50px;
+}
+
+.product-item {
+    flex-basis: calc(25% - 15px); /* Mỗi mục chiếm khoảng 1/4 (25%), trừ đi khoảng cách gap */
+    text-align: center;
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 8px;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.product-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    aspect-ratio: 1/1; /* Đảm bảo hình ảnh vuông (tỷ lệ 1:1) */
+    object-fit: cover; /* Giữ ảnh không bị méo */
+}
+
+.product-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 5px;
+    height: 36px; /* Giới hạn chiều cao để tên dài không làm lệch hàng */
+}
+
+.product-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+.product-item a {
+    text-decoration: none;
+    color: inherit;
+}
+/* --- PHẦN ĐÁNH GIÁ KHÁCH HÀNG --- */
+.testimonial-section {
+    padding: 30px 5%;
+    max-width: 1400px;
+    margin: 40px auto;
+}
+
+/* Kế thừa style section-title đã được cập nhật trước đó */
+
+.testimonial-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.testimonial-item {
+    flex-basis: 50%; /* Mỗi đánh giá chiếm 50% chiều rộng */
+    display: flex; /* Bố cục nội dung bên trong: Avatar và Text */
+    align-items: flex-start; /* Căn chỉnh avatar và text từ trên xuống */
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Làm cho ảnh đại diện tròn */
+    object-fit: cover;
+    margin-right: 15px;
+    flex-shrink: 0; /* Đảm bảo avatar không bị co lại */
+}
+
+.review-content {
+    flex-grow: 1;
+}
+
+.reviewer-name {
+    font-weight: bold;
+    font-size: 16px;
+    color: #2d5a27; /* Màu xanh lá chủ đạo */
+    margin-bottom: 5px;
+}
+
+.review-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    font-style: italic;
+}
+/* --- PHẦN 1: THIẾT LẬP FOOTER CHUNG --- */
+footer {
+    background-color: #000000;
+    color: #ffffff; 
+    padding: 30px 20px 10px;
+    position: relative;
+}
+
+.footer-container {
+    /* Sử dụng Grid để quản lý các cột nội dung một cách dễ dàng */
+    display: grid;
+    /* Định nghĩa 3 cột: Cột trống (để chừa chỗ cho logo), Cột Contact (Căn giữa), Cột Commitment (Bên phải) */
+    grid-template-columns: 140px 1fr 1fr; /* 140px là chiều rộng logo + 1fr cho 2 cột còn lại */
+    gap: 30px; /* Khoảng cách giữa các cột */
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    /* Chừa chỗ cho logo ở phía trên cùng */
+    padding-top: 70px; 
+}
+
+/* --- PHẦN 2: ĐỊNH VỊ LOGO (Nổi lên, Chỉ bo góc dưới) --- */
+.footer-logo-box {
+    position: absolute;
+    top: 0; 
+    left: 20px; 
+    
+    background-color: #ffffff; 
+    /* Chỉ bo góc dưới: Trên trái, Trên phải, Dưới phải, Dưới trái */
+    border-radius: 0 0 15px 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    /* Kích thước logo lớn, hình chữ nhật */
+    height: 120px; 
+    width: 140px; /* Quan trọng: Kích thước này dùng cho Grid template */
+    padding: 10px;
+}
+
+.footer-logo {
+    height: 60px;
+    width: auto;
+    margin: 0; 
+}
+
+/* --- PHẦN 3: VỊ TRÍ CÁC CỘT NỘI DUNG (Sử dụng Grid) --- */
+.footer-contact {
+    /* Đặt cột này vào cột thứ 2 trong Grid */
+    grid-column: 2 / span 1; 
+    /* Căn giữa nội dung bên trong cột Contact */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Cột CAM KẾT & TRIẾT LÝ (Nằm bên phải) */
+.footer-commitment {
+    /* Đặt cột này vào cột thứ 3 trong Grid */
+    grid-column: 3 / span 1; 
+    /* Căn lề trái hoặc giữ mặc định nếu muốn */
+    margin-bottom: 20px;
+}
+
+.footer-contact h3,
+.footer-commitment h3 {
+    color: #f0f0f0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #555;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* --- LIÊN KẾT & VĂN BẢN (Đảm bảo chữ trắng) --- */
+.footer-phone,
+.footer-address {
+    color: #ffffff; 
+    text-decoration: none; 
+    display: block; 
+    margin-bottom: 8px;
+    /* Xóa căn giữa nếu cần thiết */
+}
+
+/* --- PHẦN COPYRIGHT DƯỚI CÙNG --- */
+.footer-bottom {
+    /* Cần đưa footer-bottom ra khỏi luồng Grid để nó chiếm toàn bộ chiều rộng */
+    grid-column: 1 / -1; 
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    border-top: 1px solid #333;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.85em;
+    color: #999;
+}
+@media (max-width: 768px) {
+    /* Điều chỉnh đệm chung cho nội dung */
+    .top-bar,
+    .product-showcase,
+    .testimonial-section {
+        padding: 10px 3%; /* Giảm đệm ngang */
+    }
+
+    /* --- 1. HEADER & TOP BAR (HIỂN THỊ TẤT CẢ) --- */
+    .top-bar {
+        flex-direction: column; /* Xếp chồng các khối chính: Logo, Search, Contact */
+        align-items: center;
+        gap: 10px; /* Thêm khoảng cách giữa các khối khi xếp chồng */
+    }
+
+    .logo {
+        flex-basis: 100%; /* Chiếm toàn bộ chiều rộng ở hàng đầu tiên */
+        justify-content: center; /* Căn giữa logo */
+        margin-bottom: 5px;
+    }
+
+    /* THANH TÌM KIẾM (HIỂN THỊ LẠI) */
+    .search-box {
+        display: flex; /* Bỏ display: none; */
+        order: 2; /* Đặt ở giữa */
+        width: 100%; /* Chiếm toàn bộ chiều rộng (trừ padding) */
+        max-width: 400px; /* Giới hạn chiều rộng tối đa */
+        margin: 5px 0;
+    }
+
+    /* KHỐI LIÊN HỆ VÀ GIỎ HÀNG (HIỂN THỊ LẠI) */
+    .contact {
+        order: 3; /* Đặt ở hàng thứ ba */
+        flex-basis: 100%; 
+        justify-content: center; /* Căn giữa các mục contact */
+        gap: 8px; /* Giảm khoảng cách giữa các nút */
+    }
+
+    /* Đảm bảo SĐT và Khuyến mãi được hiển thị */
+    .btn-promo,
+    .phone {
+        display: block; /* Bỏ display: none; */
+        padding: 6px 10px; /* Giảm padding để tiết kiệm không gian */
+        font-size: 12px;
+    }
+    
+    .cart-box {
+        /* Đảm bảo giỏ hàng vẫn nổi bật */
+        margin-left: 10px;
+    }
+
+    /* Navbar (Menu) */
+    .navbar ul {
+        flex-wrap: wrap; 
+        justify-content: center; /* Căn giữa menu nếu có ít mục */
+        padding: 5px 0;
+    }
+    .navbar li a {
+        padding: 8px 10px; 
+        font-size: 13px;
+    }
+    .section-title {
+        font-size: 22px; 
+        margin: 20px 0;
+        gap: 10px;
+    }   
+    .section-title::before,
+    .section-title::after {
+        max-width: 100px; 
+    }
+
+    .product-list {
+        justify-content: space-around;
+        gap: 15px;
+    }
+    
+    .product-item {
+        flex-basis: calc(50% - 10px); /* 2 cột */
+        padding: 10px;
+    }
+    .product-name {
+        font-size: 13px;
+        height: auto; /* Xóa giới hạn chiều cao */
+    }
+
+    .product-price {
+        font-size: 15px;
+    }
+
+    /* --- 3. TESTIMONIALS --- */
+    .testimonial-list {
+        flex-direction: column; /* Xếp chồng các đánh giá */
+        gap: 20px;
+    }
+
+    .testimonial-item {
+        flex-basis: 100%; /* Chiếm toàn bộ chiều rộng */
+        padding: 20px;
+    }
+    
+    .avatar {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+    
+    .review-text {
+        font-size: 13px;
+    }
+       .footer-container {
+        /* Chuyển sang 1 cột duy nhất trên mobile */
+        grid-template-columns: 1fr; 
+        padding-top: 130px; 
+    }
+    
+    .footer-logo-box {
+        left: 50%; 
+        transform: translateX(-50%);
+        border-radius: 5px; 
+    }
+    /* Đảm bảo nội dung căn giữa trên di động */
+    .footer-contact {
+        grid-column: 1 / -1; 
+        align-items: flex-start; /* Quay lại căn trái để dễ đọc */
+        text-align: left;
+    }
+
+    .footer-commitment {
+        grid-column: 1 / -1; 
+    }
+
+    .footer-bottom {
+        grid-column: 1 / -1; 
+    }
+    .top-bar,
+    .product-showcase,
+    .testimonial-section {
+        padding: 10px 3%; /* Giảm đệm ngang */
+    }
+}
